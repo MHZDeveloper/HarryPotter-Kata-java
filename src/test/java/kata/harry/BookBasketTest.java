@@ -82,4 +82,41 @@ public class BookBasketTest {
         assertThat(bookBasket.getPrice()).isEqualByComparingTo(BigDecimal.valueOf(30.00));
     }
 
+    @Test
+    public void should_return_23_20_if_basket_contains_three_books_having_two_same() {
+        //Given
+        List<Book> books = Arrays.asList(Book.VOLUME_1, Book.VOLUME_1, Book.VOLUME_2);
+
+        //When
+        BookBasket bookBasket = new BookBasket(books);
+
+        //Then
+        assertThat(bookBasket.getPrice()).isEqualByComparingTo(BigDecimal.valueOf(23.20));
+    }
+
+    @Test
+    public void should_return_29_60_if_basket_contains_four_books_having_two_same() {
+        //Given
+        List<Book> books = Arrays.asList(Book.VOLUME_1, Book.VOLUME_1, Book.VOLUME_2, Book.VOLUME_3);
+
+        //When
+        BookBasket bookBasket = new BookBasket(books);
+
+        //Then
+        assertThat(bookBasket.getPrice()).isEqualByComparingTo(BigDecimal.valueOf(29.60));
+    }
+
+    @Test
+    public void should_return_51_20_if_basket_contains_five_books_having_two_same() {
+        //Given
+        List<Book> books = Arrays.asList(Book.VOLUME_1, Book.VOLUME_1,
+                Book.VOLUME_2, Book.VOLUME_2, Book.VOLUME_3, Book.VOLUME_3, Book.VOLUME_4, Book.VOLUME_5);
+
+        //When
+        BigDecimal price = new BookBasket(books).getPrice();
+
+        //Then
+        assertThat(price).isEqualByComparingTo(BigDecimal.valueOf(51.20));
+    }
+
 }
