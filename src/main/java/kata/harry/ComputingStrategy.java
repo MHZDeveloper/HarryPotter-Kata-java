@@ -17,7 +17,8 @@ public enum ComputingStrategy {
     public Set<Book> applyStrategy(Set<Book> books, List<Book> originalBasket) {
         ArrayList<Book> booksList = new ArrayList<>(books);
         while (booksList.size() > uniqueBooksNumber) {
-            booksList.remove(originalBasket.stream().collect(Collectors.groupingBy(o -> o, Collectors.counting()))
+            booksList.remove(originalBasket.stream()
+                    .collect(Collectors.groupingBy(o -> o, Collectors.counting()))
                     .entrySet()
                     .stream()
                     .sorted(Map.Entry.comparingByValue())

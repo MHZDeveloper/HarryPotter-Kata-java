@@ -4,11 +4,21 @@ import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class BookBasketTest {
+
+    @Test
+    public void should_return_0_if_empty_basket() {
+        //When
+        BookBasket bookBasket = new BookBasket(Collections.emptyList());
+
+        //Then
+        assertThat(bookBasket.getPrice()).isEqualByComparingTo(BigDecimal.ZERO);
+    }
 
     @Test
     public void should_return_8_if_basket_contains_one_book() {
