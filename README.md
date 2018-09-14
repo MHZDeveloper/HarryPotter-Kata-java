@@ -3,7 +3,7 @@ HarryPotter kata for practice TDD implemented in Java by Jorge Sánchez (Xurxode
 
 ## Problem Description
 
-test
+test2
 
 To try and encourage more sales of the 5 different Harry
 Potter books they sell, a bookshop has decided to offer
